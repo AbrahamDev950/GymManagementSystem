@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gym.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a9c0a1c8b5c7f36cf313cd6d1f7a17b8c06ea50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fe59eadb0abd66dc670e32d60ba3c77898df183")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gym.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gym.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
