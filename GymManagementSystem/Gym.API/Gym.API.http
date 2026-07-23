@@ -1,0 +1,8 @@
+###
+POST http://localhost:5267/api/authentication/login
+Content-Type: application/json
+
+{
+  "email": "admin@gym.com",
+  "password": "123456789"
+}
