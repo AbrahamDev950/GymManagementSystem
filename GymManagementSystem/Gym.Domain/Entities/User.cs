@@ -100,19 +100,8 @@ public class User
         return lastName;
     }
     
-
     public void SwitchStatus()
     {
-        Console.WriteLine($"Current status is {this.IsActive}");
-        if (this.IsActive)
-        {
-            this.IsActive = false;
-        }
-        else
-        {
-            this.IsActive = true;
-        }
-
-        Console.WriteLine($"New status is {this.IsActive}");
+        IsActive = !IsActive;
     }
 }
