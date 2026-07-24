@@ -1,0 +1,19 @@
+# Build
+**/bin/
+**/obj/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# User files
+*.user
+*.suo
+
+# Database (opcional)
+GymManagementSystem/Gym.API/Gym.db

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gym Management System</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Greaty&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <section id="loginSection" class="sub-container">
+            <form id="loginForm">
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+                <label for="password">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                >
+
+                <button type="submit">Log In</button>
+
+                <p id="message"></p>
+            </form>
+        </section>
+
+        <section id="dashboardSection" class="sub-container" hidden>
+            <h2 id="welcomeMessage">Welcome</h2>
+            <p id="roleMessage"></p>
+        </section>
+
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
