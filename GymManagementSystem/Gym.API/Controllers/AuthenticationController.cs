@@ -13,12 +13,13 @@ public class AuthenticationController :  ControllerBase
     {
         _loginUseCase =  loginUseCase;
     }
+
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginRequest request)
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         try
         {
-            var response = _loginUseCase.Execute(request);
+            var response = await _loginUseCase.ExecuteAsync(request);
             return Ok(response);
         }
         catch (UnauthorizedAccessException ex)

@@ -1,21 +1,35 @@
+using Gym.Application.Interfaces;
+
 namespace Gym.Application.UseCases.Autehntication;
 
 public class LoginUseCase
 {
-    public LoginResponse Execute(LoginRequest request)
+    private readonly IUserRepository _userRepository;
+
+    public LoginUseCase(IUserRepository userRepository)
     {
-        if (request.email == "admin@gym.com" && request.password == "123456789")
+        _userRepository = userRepository;
+    }
+
+    public async Task<LoginResponse> ExecuteAsync(LoginRequest request)
+    {
+        var user = await _userRepository.GetUserByEmailAsync(request.email);
+
+        if (user is null)
         {
-            return new LoginResponse
-            {
-                Id = Guid.NewGuid(),
-                FullName = "Admin",
-                Role = Domain.Enums.Role.Admin
-            };
+            throw new UnauthorizedAccessException("Invalid credentials.");
         }
-        else
+
+        if (user.PasswordHash != request.password)
         {
-            throw new UnauthorizedAccessException("Invalid credentials");
+            throw new UnauthorizedAccessException("Invalid credentials.");
         }
+
+        return new LoginResponse
+        {
+            Id = user.Id,
+            FullName = $"{user.FirstName} {user.LastName}",
+            Role = user.Role
+        };
     }
 }
